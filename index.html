@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Valentine Surprise</title>
+<title>For Gaurav ❤️</title>
 <style>
-body {
-  background:pink;
-  text-align:center;
-  font-family:Arial;
-  margin-top:100px;
+body{
+ background:linear-gradient(#ff9acb,#ffd1e8);
+ text-align:center;
+ font-family:Arial;
+ overflow:hidden;
 }
-button {
-  padding:15px 35px;
-  font-size:20px;
-  border-radius:25px;
-  border:none;
+
+h1{color:#d10068;font-size:38px;margin-top:80px;}
+
+button{
+ padding:15px 40px;
+ font-size:22px;
+ border:none;
+ border-radius:30px;
+ margin:20px;
 }
-#yes {background:#ff1493;color:white;}
-#no {background:#ddd;}
+
+#yes{background:#ff1493;color:white;}
+#no{background:#ddd;}
+
+.hidden{display:none;}
+
+.hearts{font-size:50px;}
+
 </style>
 </head>
+
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
 
-<button id="yes" onclick="love()">Yes 💋</button>
-<button id="no" onclick="nope()">No 😜</button>
+<div id="page1">
+<h1>Gaurav ❤️ Will you be my Valentine?</h1>
+<button id="yes" onclick="showLove()">Yes 💖</button>
+<button id="no" onclick="fadeNo()">No 😜</button>
+</div>
+
+<div id="page2" class="hidden">
+<div class="hearts">💖💋💖💋💖</div>
+<h1>I love you too Gaurav ❤️</h1>
+<div class="hearts">💋💖💋💖💋</div>
+</div>
 
 <script>
-function love(){
- document.body.innerHTML="💖💋💖<h1>I love you too ❤️</h1>💋💖💋";
+function showLove(){
+ page1.classList.add("hidden");
+ page2.classList.remove("hidden");
 }
-function nope(){
+
+function fadeNo(){
  document.getElementById("no").style.opacity="0.3";
 }
+
+setInterval(()=>{
+ let h=document.createElement("div");
+ h.innerHTML="💖";
+ h.style.position="fixed";
+ h.style.left=Math.random()*100+"%";
+ h.style.top="100%";
+ h.style.fontSize="30px";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),2000);
+},300);
 </script>
 
 </body>
-  <audio autoplay loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-setInterval(()=>{
- let heart=document.createElement("div");
- heart.innerHTML="💖";
- heart.style.position="fixed";
- heart.style.left=Math.random()*100+"%";
- heart.style.top="100%";
- heart.style.fontSize="30px";
- document.body.appendChild(heart);
- setTimeout(()=>heart.remove(),2000);
-},300);
-  </script>
 </html>
