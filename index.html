@@ -36,4 +36,20 @@ function nope(){
 </script>
 
 </body>
+  <audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+setInterval(()=>{
+ let heart=document.createElement("div");
+ heart.innerHTML="💖";
+ heart.style.position="fixed";
+ heart.style.left=Math.random()*100+"%";
+ heart.style.top="100%";
+ heart.style.fontSize="30px";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),2000);
+},300);
+  </script>
 </html>
