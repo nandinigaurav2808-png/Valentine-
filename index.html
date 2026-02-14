@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine Surprise</title>
+<style>
+body {
+  background:pink;
+  text-align:center;
+  font-family:Arial;
+  margin-top:100px;
+}
+button {
+  padding:15px 35px;
+  font-size:20px;
+  border-radius:25px;
+  border:none;
+}
+#yes {background:#ff1493;color:white;}
+#no {background:#ddd;}
+</style>
+</head>
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button id="yes" onclick="love()">Yes 💋</button>
+<button id="no" onclick="nope()">No 😜</button>
+
+<script>
+function love(){
+ document.body.innerHTML="💖💋💖<h1>I love you too ❤️</h1>💋💖💋";
+}
+function nope(){
+ document.getElementById("no").style.opacity="0.3";
+}
+</script>
+
+</body>
+</html>
